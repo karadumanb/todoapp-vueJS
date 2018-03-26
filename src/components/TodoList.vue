@@ -1,38 +1,23 @@
 <template>
-<div>
+  <div>
     <!--JavaScript expressions in Vue are enclosed in double curly brackets.-->
+    <!--With filter functions we calculated amount of tasks with done property-->
     <p>Completed Tasks: {{todos.filter(todo => {return todo.done === true}).length}}</p>
     <p>Pending Tasks: {{todos.filter(todo => {return todo.done === false}).length}}</p>
-    <div class='card todo-card' v-for="todo in todos">
-      <div class='card-body'>
-        <div class='card-title'>
-          {{ todo.title }}
-        </div>
-        <div class='card-text'>
-          {{ todo.project }}
-        </div>
-        <div class='card-text'>
-          <span class='right floated edit icon'>
-            <i class='edit icon'></i>
-          </span>
-        </div>
-      </div>
-      <div class='card-text ui bottom attached green basic button mx-auto' v-show="todo.done">
-        Completed
-      </div>
-      <div class='card-text ui bottom attached red basic button mx-auto' v-show="!todo.done">
-        Complete
-      </div>
-    </div>
+    <!--v-for is kind of like *ngFor link: https://vuejs.org/v2/guide/list.html-->
+    <todo  v-for="todo in todos"></todo>
   </div>
 </template>
 
 <script>
 /* eslint-disable */ 
+import Todo from './Todo';
 export default {
-  name: 'TodoList',
   //we declare properties to accept the data sent from other components
   props: ['todos'],
+   components: {
+    Todo,
+  },
 }
 </script>
 
