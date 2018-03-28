@@ -5,7 +5,7 @@
     <p>Completed Tasks: {{todos.filter(todo => {return todo.done === true}).length}}</p>
     <p>Pending Tasks: {{todos.filter(todo => {return todo.done === false}).length}}</p>
     <!--v-for is kind of like *ngFor link: https://vuejs.org/v2/guide/list.html-->
-    <todo  v-for="todo in todos"></todo>
+    <todo class='card todo-card' v-for="todo in todos" v-bind:todo="todo"></todo>
   </div>
 </template>
 

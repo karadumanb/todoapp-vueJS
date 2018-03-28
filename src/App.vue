@@ -1,7 +1,9 @@
 <template>
   <div id="app">
+    <h1>Todo App</h1>
     <todo-list v-bind:todos="todos"></todo-list>
   </div>
+  
 </template>
 
 <script>
@@ -18,20 +20,20 @@ export default {
   data() {
     return {
       todos: [{
-        title: 'Todo A',
-        project: 'Project A',
+        title: 'Todo 1',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates dolorem tempore!',
         done: false,
       }, {
-        title: 'Todo B',
-        project: 'Project B',
+        title: 'Todo 2',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates dolorem tempore!',
         done: true,
       }, {
-        title: 'Todo C',
-        project: 'Project C',
+        title: 'Todo 3',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates dolorem tempore!',
         done: false,
       }, {
-        title: 'Todo D',
-        project: 'Project D',
+        title: 'Todo 4',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates dolorem tempore!',
         done: false,
       }],
     };
